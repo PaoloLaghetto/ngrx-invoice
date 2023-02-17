@@ -1,0 +1,31 @@
+$primary: #198754 ;
+
+$btn-border-radius: 0;
+$btn-border-radius-sm: 0;
+$btn-border-radius-lg: 0;
+
+$input-border-radius: 0;
+$input-btn-border-width: 2px;
+$custom-select-border-radius: 0;
+$dropdown-inner-border-radius: 0;
+$dropdown-border-radius: 0;
+$badge-border-radius: 20px;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.fa, .fas, far {
+  cursor: pointer;
+}
+
+.vscroller {
+  overflow-y: auto;
+}
+
+.transparent-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+select.form-control {
+  -webkit-appearance: none;
+}
