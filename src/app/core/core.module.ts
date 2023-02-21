@@ -1,11 +1,14 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {StoreModule} from "@ngrx/store";
-import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {routerReducer, RouterState, StoreRouterConnectingModule} from "@ngrx/router-store";
-import {EffectsModule} from "@ngrx/effects";
-import {RouterEffects} from "./router/store/router.effects";
-
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {
+  routerReducer,
+  RouterState,
+  StoreRouterConnectingModule,
+} from '@ngrx/router-store';
+import { EffectsModule } from '@ngrx/effects';
+import { RouterEffects } from './router/store/router.effects';
 
 @NgModule({
   declarations: [],
@@ -13,28 +16,26 @@ import {RouterEffects} from "./router/store/router.effects";
     CommonModule,
     StoreModule.forRoot(
       {
-      auth: () => ({ token: 123}),
-      profile: () => 'Mario Rossi',
-      router: routerReducer
+        auth: () => ({ token: 123 }),
+        profile: () => 'Mario Rossi',
+        router: routerReducer,
       },
       {
         runtimeChecks: {
           strictActionImmutability: true,
           strictActionSerializability: true,
           strictStateImmutability: true,
-          strictStateSerializability: true
-        }
+          strictStateSerializability: true,
+        },
       }
-      ),
+    ),
     StoreDevtoolsModule.instrument({
-      maxAge: 25
+      maxAge: 25,
     }),
     StoreRouterConnectingModule.forRoot({
-      routerState: RouterState.Minimal
+      routerState: RouterState.Minimal,
     }),
-    EffectsModule.forRoot([
-      RouterEffects
-    ])
-  ]
+    EffectsModule.forRoot([RouterEffects]),
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}
