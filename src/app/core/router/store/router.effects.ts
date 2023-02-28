@@ -21,7 +21,7 @@ export class RouterEffects {
   backEffects$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(RouterActions.back),
+        ofType(RouterActions.forward),
         tap(() => this.location.back())
       ),
     { dispatch: false }

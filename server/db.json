@@ -1,0 +1,10 @@
+{
+  "signin": {
+    "accessToken": "alksbfabsdukvbasduhfa"
+  },
+  "profile": {
+    "name": "Mario Rossi",
+    "address": "Via XYZ 123",
+    "email": "info@rossi.it"
+  }
+}
