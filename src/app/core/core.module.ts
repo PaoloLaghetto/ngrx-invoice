@@ -9,6 +9,8 @@ import {
 } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterEffects } from './router/store/router.effects';
+import { ProfileService } from './profile/services/profile.service';
+import { ProfileEffects } from './profile/store/profile.effects';
 
 @NgModule({
   declarations: [],
@@ -35,7 +37,10 @@ import { RouterEffects } from './router/store/router.effects';
     StoreRouterConnectingModule.forRoot({
       routerState: RouterState.Minimal,
     }),
-    EffectsModule.forRoot([RouterEffects]),
+    EffectsModule.forRoot([
+      RouterEffects, ProfileEffects
+    ]),
   ],
+  providers: [ProfileService],
 })
 export class CoreModule {}

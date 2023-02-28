@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../../model/user';
+import {environment} from "../../../../environments/environment.development";
 
-const API = 'http://loaclhost:3000'
 @Injectable()
-export class ProgileService {
+export class ProfileService {
   constructor(private http: HttpClient) {}
 
   load() {
-    return this.http.get<User>(API + '/profile');
+    return this.http.get<User>(`${environment.BASE_API}/profile`)!;
   }
 
   edit(user: User) {
-    return this.http.patch<User>(`${API}/profile`, user);
+    return this.http.patch<User>(`${environment.BASE_API}/profile`, user);
   }
 }
